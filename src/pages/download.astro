@@ -1,0 +1,134 @@
+---
+import DownloadCard from '../components/DownloadCard.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Derifted Downloads">
+	<main>
+        <div class="information">
+			<p>
+				<span class="header">Information<br /></span>
+				Any builds labelled as alpha or beta are <strong>not</strong> guaranteed to work and will break at any given moment!<br />
+                However any labelled as stable should continue to work for the forseeable future. Meta may break older versions however.
+			</p>
+		</div>
+        <ul role="list" class="link-card-grid">
+            <DownloadCard
+                name="1.0.1"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="stable"
+                display="Stable"
+                notes="" />
+
+            <DownloadCard
+                name="1.0.0"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="stable"
+                display="Stable"
+                notes="" />
+        </ul>
+        <br />
+        <ul role="list" class="link-card-grid">
+            <DownloadCard
+                name="1.0.1-b2"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="beta"
+                display="Beta"
+                notes="Quest 1 support may be buggy." />
+
+            <DownloadCard
+                name="1.0.1-b1"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="beta"
+                display="Beta"
+                notes="" />
+
+            <DownloadCard
+                name="1.0.0-b3"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="beta"
+                display="Beta"
+                notes="" />
+
+            <DownloadCard
+                name="1.0.0-b2"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="beta"
+                display="Beta"
+                notes="Known to freeze while downloading." />
+
+            <DownloadCard
+                name="1.0.0-b1"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="beta"
+                display="Beta"
+                notes="Lex/NeoForge may not work." />
+        </ul>
+        <br />
+        <ul role="list" class="link-card-grid">
+            <DownloadCard
+                name="1.0.1-5abe16b"
+                href=""
+                icon="material-symbols:download-rounded"
+                clazz="alpha"
+                display="Alpha"
+                notes="Mod Manager cannot find NeoForge mods, " />
+        </ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: .5rem 1rem;
+		width: 800px;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		width: calc(100% - 2rem);
+	}
+    .information {
+		margin-bottom: 2rem;
+		border: 3px solid rgba(var(--information), 100%);
+		background: linear-gradient(rgba(var(--information), 66%), rgba(var(--information), 33%));
+		padding: .5rem 1.5rem;
+		border-radius: 8px;
+	}
+	.information code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.information strong {
+		color: rgb(var(--information-highlight));
+	}
+	.information p {
+		font-size: medium;
+	}
+	.information p .header {
+		font-weight: bold;
+		color: rgb(var(--information-highlight));
+		font-size: x-large;
+	}
+	.information > * {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+    .link-card-grid {
+		display: grid;
+		grid-template-columns: 1;
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

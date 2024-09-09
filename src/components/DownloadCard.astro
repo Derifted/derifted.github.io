@@ -1,0 +1,101 @@
+---
+interface Props {
+	name: string;
+	href: string;
+	icon: string;
+    clazz: string;
+    display: string;
+    notes: string;
+}
+
+var { name, href, icon, clazz, display, notes } = Astro.props;
+if (notes === "") notes = "No notes set for this download.";
+import { Icon } from 'astro-icon/components'
+---
+
+<li class="link-card">
+	<a href={href}>
+		<h2>
+			{name}
+			<Icon name={icon} />
+            <span class={clazz}>{display}</span>
+            <p style="margin-left: 5px; font-weight: normal;">{notes}</p>
+		</h2>
+		<slot/>
+	</a>
+</li>
+<style>
+	.link-card {
+        width: 25%;
+
+		list-style: none;
+		display: flex;
+		padding: 1px;
+        margin-bottom: 15px;
+        margin-left: initial;
+		background-color: #23262d;
+		border-radius: 7px;
+		transition: background-color .3s cubic-bezier(0.22, 1, 0.36, 1), margin-left .2s ease;
+	}
+	.link-card > a {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: calc(1.5rem - 1px);
+		border-radius: 8px;
+		color: white;
+		opacity: 0.8;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+	}
+	h2 svg {
+		position: relative;
+		right: -3px;
+		top: 3px;
+	}
+    h2 p {
+        margin-bottom: 0;
+    }
+    .stable {
+        color: rgb(205, 255, 209);
+        width: 100px;
+        border: rgba(79, 182, 87, 0.838) solid 2px;
+        border-radius: 10%;
+        background-color: rgba(79, 182, 87, 0.438);
+        padding: 5px;
+
+        margin-left: 5px;
+    }
+    .beta {
+        color: rgb(239, 255, 170);
+        width: 100px;
+        border: rgba(163, 182, 79, 0.838) solid 2px;
+        border-radius: 10%;
+        background-color: rgba(163, 182, 79, 0.438);
+        padding: 5px;
+
+        margin-left: 5px;
+    }
+    .alpha {
+        color: rgb(255, 171, 165);
+        width: 100px;
+        border: rgba(182, 86, 79, 0.838) solid 2px;
+        border-radius: 10%;
+        background-color: rgba(182, 86, 79, 0.438);
+        padding: 5px;
+
+        margin-left: 5px;
+    }
+	.link-card:hover {
+		background-color: #474b55;
+        margin-left: 1rem;
+	}
+
+    @media (max-width: 800px) {
+        .link-card {
+            width: 100%;
+        }
+    }
+</style>

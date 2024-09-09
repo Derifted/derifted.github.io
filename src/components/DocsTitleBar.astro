@@ -1,0 +1,108 @@
+---
+import { Icon } from 'astro-icon/components'
+import Link from './Link.astro'
+import DesktopLink from './DesktopLink.astro'
+---
+<header>
+    <div class="inliner">
+        <h1><a class="mobile-friendly title" href="/">Derifted Launcher</a></h1>
+        <div class="mobile-links">
+            <Link href="/docs"><h2><Icon name="material-symbols:home-rounded" /></h2></Link>
+            <Link href="/docs/faq"><h2><Icon name="material-symbols:question-mark-rounded" /></h2></Link>
+            <Link href="/docs/dev-options"><h2><Icon name="material-symbols:bug-report-rounded" /></h2></Link>
+        </div>
+        <DesktopLink href="/docs"><h2><Icon name="material-symbols:home-rounded" /></h2></DesktopLink>
+        <DesktopLink href="/docs/faq"><h2><Icon name="material-symbols:question-mark-rounded" /></h2></DesktopLink>
+        <DesktopLink href="/docs/dev-options"><h2><Icon name="material-symbols:bug-report-rounded" /></h2></DesktopLink>
+    </div>
+</header>
+<style>
+    header {
+		margin: auto;
+		padding: .5rem 1rem;
+		width: 800px;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		width: calc(100% - 2rem);
+	}
+    .title {
+        text-decoration: none;
+		background-image: linear-gradient(
+			45deg,
+			rgb(164, 164, 164),
+			rgb(255, 255, 255) 30%,
+			white 60%
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+
+        text-shadow: #ffffff00 0 0 10px;
+
+        transition: text-shadow .4s ease;
+	}
+
+    .title:hover {
+        text-shadow: #ffffff90 0 0 8px;
+    }
+
+    .inliner {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+    .inliner h2 {
+        margin-top: 1.6rem;
+
+        height: 48px;
+        width: 48px;
+
+        background-color: #23262d;
+        border-radius: 15px;
+        padding: 10px;
+        transition: margin-top .2s ease, background-color .2s ease;
+
+        text-align: center;
+    }
+    .inliner h2:hover {
+        margin-top: 1.4rem;
+        background-color: #474b55;
+    }
+    .inliner h2 svg {
+        position: relative;
+        top: 4px;
+        right: 0px;
+    }
+
+    .mobile-links { display: none; }
+
+    @media (max-width: 800px) {
+        .title {
+            content: "Derifted";
+            font-size: 30px;
+            text-align: center;
+        }
+        .inliner {
+            gap: 1rem;
+            display: grid;
+            align-items: center;
+        }
+
+        .inliner a {
+            display: none;
+        }
+
+        .mobile-links {
+            align-self: center;
+            display: flex;
+            flex-direction: row;
+            gap: 2.5rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mobile-friendly { display: block !important; }
+    }
+</style>

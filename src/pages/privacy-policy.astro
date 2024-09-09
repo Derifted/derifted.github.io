@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Derifted Privacy Policy">
+	<main>
+		<h1>Privacy policy</h1>
+        <p>
+            Last Updated: 8/25/2024
+            <br />
+            <h2>Introduction</h2>
+            <strong>
+                Derifted Launcher ("we", "us", "our") respects your privacy and is committed 
+                to protecting it through our compliance with this privacy policy.
+            </strong>
+            <br />
+            <h3>Data Collection and Storage</h3>
+            Derifted Launcher stores your Minecraft account information locally on your 
+            device for the sole purpose of authenticating your Minecraft account. 
+            This information is stored securely in a directory that is only accessible to the app. 
+            We do not transmit this information to any external servers, nor do we have access to it once it's stored on your device.
+            <br />
+            <h3>No Data Transmission</h3>
+            Derifted Launcher does not collect, store, or transmit any personal data to our servers, 
+            as we do not have any servers of our own. 
+            All operations and data processing occur locally on your machine.
+            <br />
+            <h3>Third-Party Services</h3>
+            Derifted Launcher interacts with Minecraft's official servers and services. 
+            Please note that any data exchanged with Minecraft's servers is subject to Mojang's privacy policy. 
+            We encourage you to review their privacy policy to understand how your data is handled when you use our 
+            launcher to access Minecraft's services.
+            <br />
+            <h3>Minecraft Privacy Policy</h3>
+            For information on how your data is processed by Minecraft, 
+            please refer to Mojang's official privacy policy: 
+            <a href="https://www.minecraft.net/en-us/privacy/gdpr">Minecraft Privacy Policy</a>.
+            <br />
+            <h3>Changes to This Privacy Policy</h3>
+            We may update our privacy policy from time to time. 
+            Any changes will be posted on this page with an updated revision date.
+            <br />
+            <h3>Contact Us</h3>
+            If you have any questions about this privacy policy, please contact us at DeriftedLauncher@gmail.com.
+        </p>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: .5rem 1rem;
+		width: 800px;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		width: calc(100% - 2rem);
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: left;
+		margin-bottom: 1em;
+	}
+	.warning {
+		margin-bottom: 2rem;
+		border: 3px solid rgba(var(--warning), 100%);
+		background: linear-gradient(rgba(var(--warning), 66%), rgba(var(--warning), 33%));
+		padding: .5rem 1.5rem;
+		border-radius: 8px;
+		color: white;
+	}
+	.warning code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.warning strong {
+		color: rgb(var(--warning-highlight));
+	}
+	.warning p {
+		font-size: medium;
+		text-decoration: none;
+	}
+	.warning p .header {
+		font-weight: bold;
+		color: rgb(var(--warning-highlight));
+		font-size: x-large;
+	}
+	.warning > * {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+
+	.link-card-download-grid {
+		display: grid;
+		grid-template-columns: 1;
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

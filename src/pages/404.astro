@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Derifted 404">
+	<main>
+		<div class="warning">
+			<p>
+				<span class="header">404<br /></span>
+				You've landed on an unknown page.
+			</p>
+		</div>
+		<h1>Click <a href="/">here</a> to return home.</h1>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: .5rem 1rem;
+		width: 800px;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		width: calc(100% - 2rem);
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 1em;
+        text-align: center;
+	}
+    h1 a {
+        text-decoration: none;
+        color: aqua;
+    }
+	.warning {
+		margin-bottom: 2rem;
+		border: 3px solid rgba(var(--warning), 100%);
+		background: linear-gradient(rgba(var(--warning), 66%), rgba(var(--warning), 33%));
+		padding: .5rem 1.5rem;
+		border-radius: 8px;
+	}
+	.warning code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.warning strong {
+		color: rgb(var(--warning-highlight));
+	}
+	.warning p {
+		font-size: medium;
+	}
+	.warning p .header {
+		font-weight: bold;
+		color: rgb(var(--warning-highlight));
+		font-size: x-large;
+	}
+	.warning > * {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+</style>

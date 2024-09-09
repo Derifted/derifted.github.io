@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Derifted Discord">
+	<main>
+		<div class="info">
+			<a href="https://discord.gg/g5hfHhBpvF">If you were not redirected, please click here.</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.info {
+		margin-bottom: 2rem;
+		border: 3px solid rgba(var(--warning), 100%);
+		background: linear-gradient(rgba(var(--warning), 66%), rgba(var(--warning), 33%));
+		padding: .5rem 1.5rem;
+		border-radius: 8px;
+	}
+	.info code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.info strong {
+		color: rgb(var(--warning-highlight));
+	}
+	.info p {
+		font-size: medium;
+	}
+	.info p .header {
+		font-weight: bold;
+		color: rgb(var(--warning-highlight));
+		font-size: x-large;
+	}
+	.info > * {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+</style>
+<script>
+    window.location.href = "https://discord.gg/g5hfHhBpvF";
+</script>

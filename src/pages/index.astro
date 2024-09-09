@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Derifted">
+	<main>
+		<a href="/public-beta" style="text-decoration: none;">
+			<div class="warning">
+				<p>
+					<span class="header">Warning!<br /></span>
+					<strong>We are in a public beta!</strong> Please be aware there may be bugs.
+				</p>
+			</div>
+		</a>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://github.com/game-engine-tests/Derifted-Launcher"
+				title="GitHub"
+				icon="material-symbols:code-rounded"
+				body="Explore the source code powering the launcher or perhaps make an bug report"
+			/>
+			<Card
+				href="/discord"
+				title="Discord"
+				icon="material-symbols:chat-bubble-rounded"
+				body="Chat with the community and get support, all in the Discord server"
+			/>
+		</ul>
+		<ul role="list" class="link-card-download-grid">
+			<Card
+				href="/download"
+				title="Download"
+				icon="material-symbols:download-rounded"
+				body="Download the launcher onto your VR headset here with the APK"
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: .5rem 1rem;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: left;
+		margin-bottom: 1em;
+	}
+	.warning {
+		margin-bottom: 2rem;
+		border: 3px solid rgba(var(--warning), 100%);
+		background: linear-gradient(rgba(var(--warning), 66%), rgba(var(--warning), 33%));
+		padding: .5rem 1.5rem;
+		border-radius: 8px;
+		color: white;
+	}
+	.warning code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.warning strong {
+		color: rgb(var(--warning-highlight));
+	}
+	.warning p {
+		font-size: medium;
+		text-decoration: none;
+	}
+	.warning p .header {
+		font-weight: bold;
+		color: rgb(var(--warning-highlight));
+		font-size: x-large;
+	}
+	.warning > * {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+
+	.link-card-download-grid {
+		display: grid;
+		grid-template-columns: 1;
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

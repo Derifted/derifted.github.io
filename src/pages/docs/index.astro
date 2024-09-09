@@ -1,0 +1,28 @@
+---
+import Link from "../../components/Link.astro";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+<DocsLayout title="Derifted Documentation">
+    <main>
+        <h1>Welcome to the Derifted Documentation</h1>
+        <h2>Pages</h2>
+        <ul>
+            <li><a href="/docs/faq">Frequently Asked Questions</a></li>
+            <li><a href="/docs/dev-options">Developer Options</a></li>
+        </ul>
+    </main>
+</DocsLayout>
+<style>
+    li {
+        margin-bottom: 2rem;
+    }
+    a {
+        background-color: #23262d;
+        border-radius: 15px;
+        padding: 10px;
+        transition: background-color .2s ease;
+    }
+    a:hover {
+        background-color: #474b55;
+    }
+</style>

@@ -1,0 +1,50 @@
+---
+interface Props {
+	title: string;
+    date: string;
+}
+
+const { title, date } = Astro.props;
+
+const layoutTitle = "Derifted " + title;
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title={layoutTitle}>
+	<main>
+		<h1>{title}</h1>
+		<p style="font-size: small;">Issued as of {date}</p>
+        <slot />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: .5rem 1rem;
+		width: 800px;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+		width: calc(100% - 2rem);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+    main > * {
+        text-align: center;
+    }
+	main > * a {
+        font-weight: bold;
+    }
+</style>
